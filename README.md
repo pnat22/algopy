@@ -2,7 +2,7 @@
 
 - copy config-sample.toml to config.toml and enter your details
 
-- in the config and give  data_account_name and trading_account_name, both can be same or different if the order has to go to one broker and data comes from another broker
+- in the config.toml file you ahve to give data_account_name and trading_account_name, both can be same or different if the order has to go to one broker and data comes from another broker
 
 
 - server setup
