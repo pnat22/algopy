@@ -1,0 +1,27 @@
+{% extends "layout/default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h3>Scrip</h3>
+
+    {% if msg != "" %}
+    <p class="notice">{{ msg }}</p>
+    {% endif %}
+
+    <div>
+        <form method="post" action="/scrip">
+            <label>Scrips To Trade:</label><br>
+            <textarea name='scrips' rows=10 style='margin-top:10;width:250px;'>{{scrips}}</textarea><br><br>
+            <button action="submit">Save</button>
+            <br><br>
+            <a href="/">back</a>
+        </form>
+    </div>
+
+{% endblock %}
+

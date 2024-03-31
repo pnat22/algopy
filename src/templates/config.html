@@ -1,0 +1,27 @@
+{% extends "layout/default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h3>config for user: {{ user }}</h3>
+
+    {% if msg != "" %}
+    <p class="notice">{{ msg }}</p>
+    {% endif %}
+
+    <div>
+        <form method="post" action="/config/{{ user }}">
+            <textarea name='config' rows=10 style='margin-top:10;width:550px;'>{{ config }}</textarea><br><br>
+            <button class="button" action="submit">Save</button>
+            <br><br>
+            <a class="" href="/users">Back</a>
+            <br><br>
+        </form>
+    </div>
+
+{% endblock %}
+

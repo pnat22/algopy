@@ -1,0 +1,17 @@
+setuptools
+pandas
+websocket-client
+rel
+requests
+pandas_ta
+sqlitedict
+flask
+pyotp
+dhanhq
+yfinance
+yahoofinancials
+tomli
+gunicorn
+psutil
+websockets
+gunicorn

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic"> -->
+
+
+    <title>ALGO SERVER - {% block title %}{% endblock %}</title>
+    {% endblock %}
+
+    <style>
+        body > header {
+            padding: 1rem .5rem 1rem .5rem;
+        }
+        .notice {
+            color: orange;
+        }
+        body {
+            font-size: 1rem;
+        }
+        table {
+            width: 100%;
+        }
+        textarea {
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            {% if session['username'] %}
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/scrip">Scrip</a>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+
+
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+    </div>
+</body>
+</html>

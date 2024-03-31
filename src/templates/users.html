@@ -1,0 +1,32 @@
+{% extends "layout/default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h3>Users</h3>
+
+    <table>
+        <tr>
+            <th>user</th>
+            <th>config</th>
+            <th>logs</th>
+            <th>position</th>
+            <th>stop</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user }}</td>
+            <td><a href='/config/{{ user }}'>config</a></td>
+            <td><a href='/logs/{{ user }}/500'>logs</a></td>
+            <td><a href='/position/{{ user }}'>position</a></td>
+            <td><a href='/stop/{{ user }}'>stop</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
+

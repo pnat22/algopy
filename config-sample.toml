@@ -1,0 +1,53 @@
+[strategy]
+name="BreakoutStrategy"
+data_account_name = "my-finvasia-account"
+trading_account_name = "my-dhan-account"
+cash_to_trade = 30000
+stocks = ['ABC', 'XYZ']
+
+# enable only one startegy at a time, code is not written to run multiple startegy
+# support for multiple starategy will be done later
+# [strategy]
+# name="HighLowStrategy"
+# data_account_name = "my-zebu-account"
+# trading_account_name = "my-flat-account"
+# cash_to_trade = 9000
+
+
+[[accounts]]
+name = "my-zebu-account"
+broker = "zebu"
+user_id = ""
+password = ""
+secret = ""
+api_key = ""
+
+
+[[accounts]]
+name = "my-flat-account"
+broker = ""
+user_id = ""
+password = ""
+secret = ""
+api_key = ""
+api_secret = ""
+totp = ""
+
+
+[[accounts]]
+name = "my-dhan-account"
+broker = "dhan"
+client_id = ""
+access_token = ""
+
+
+[[accounts]]
+name = "my-finvasia-account"
+broker = "finvasia"
+user_id = ""
+password = ""
+totp_token = ""
+imei = ""
+vendor_code = ""
+api_key = ""
+

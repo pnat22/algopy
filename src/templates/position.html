@@ -1,0 +1,49 @@
+{% extends "layout/default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h3>position</h3>
+
+    {% if msg != "" %}
+    <p class="notice">{{ msg }}</p>
+    {% endif %}
+
+    <div>
+        username: <b>{{ username }}</b><br>
+        account id: <b>{{ uid }}</b><br><br>
+    </div>
+
+    <table>
+        <tr>
+            <th>symbol</th>
+            <th>daybuyqty</th>
+            <th>daysellqty</th>
+            <th>daybuyavgprc</th>
+            <th>daysellavgprc</th>
+            <th>daybuyvalue</th>
+            <th>daysellvalue</th>
+            <th>p&l</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item['tsym'] }}</td>
+            <td>{{ item['daybuyqty'] }}</td>
+            <td>{{ item['daysellqty'] }}</td>
+            <td>{{ item['daybuyavgprc'] }}</td>
+            <td>{{ item['daysellavgprc'] }}</td>
+            <td>{{ "{:.2f}".format(item['daybuyvalue']) }}</td>
+            <td>{{ "{:.2f}".format(item['daysellvalue']) }}</td>
+            <td>{{ item['rpnl'] }}</td>
+            <!-- <td>{ (float(item['daysellavgprc']) * float(item['daysellqty'])) - (float(item['daybuyavgprc']) * float(item['daybuyqty'])) }</td> -->
+
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
+

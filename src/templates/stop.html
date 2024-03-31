@@ -1,0 +1,23 @@
+{% extends "layout/default.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h3>stop</h3>
+
+    {{ msg }}
+    <br />
+    <br />
+
+    {% if stopped == False %}
+    <form method="POST">
+        <button>STOP ALGO</button>
+    </form>
+    {% endif %}
+
+{% endblock %}
+
